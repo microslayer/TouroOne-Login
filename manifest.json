@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Touro Blackboard Login",
+  "description": "Automatically logs Blackboard users into Blackboard.",
+  "version": "1.0",
+  "content_scripts": [{
+	"matches": ["https://bb-tc.touro.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_19_1", "https://bb-tc.touro.edu/webapps/login/?action=relogin"], 
+	"js": [
+	"content.js", 
+	"jquery.js"]
+   }], 
+
+  "icons": { "19": "images/blackboard-logo.png",
+	     "48": "images/tourologo.jpg" }, 
+
+  "browser_action": {
+  "default_title": "Touro Blackboard Login", 
+  "default_popup": "popup.html", 
+  "default_icon": "images/blackboard-logo.png"
+  }, 
+
+  "permissions": [
+	"storage",
+	"nativeMessaging"
+   ]
+}

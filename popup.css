@@ -1,0 +1,32 @@
+body { 
+    font-family: "Segoe UI", sans-serif; 
+    width: 400px; 
+    font-size: 16px; 
+    }
+
+welcome {
+    font-size: 20px; 
+    font-weight: bold; 
+    }
+
+#changeInfo {
+    color: blue; 
+    font-weight: bold; 
+    }
+
+warning {
+    color: red; 
+    }
+
+#changeInfo:hover {
+    text-decoration: underline;
+    }
+
+#footer {
+    font-size: 10px; 
+    text-align: center; 
+}
+
+.italics {
+    font-style: italic; 
+}

@@ -1,20 +1,28 @@
 var studentUsername; 
 var studentPassword; 
+var extEnabled; 
 
+// todo fix 
 chrome.storage.sync.get("username", function (obj) {  
-    studentUsername = obj.username; 
+	studentUsername = obj.username; 
 
-chrome.storage.sync.get("password", function (obj) {  
-    studentPassword = obj.password; 
+	chrome.storage.sync.get("password", function (obj) {  
+		studentPassword = obj.password; 
 
-var login = document.getElementById('user_id'); 
-var password = document.getElementById('password'); 
+		chrome.storage.sync.get("extEnabled", function (obj) {  
+			extEnabled = obj.extEnabled || true; 
 
-login.value = studentUsername; 
-password.value = studentPassword; 
+			if (extEnabled) {
+				$.post("/sso/login", { 
+					username: studentUsername, 
+					password: studentPassword, 
+					lt: document.getElementsByName("lt")[0].value, 
+					execution: document.getElementsByName("execution")[0].value, 
+					_eventId: "submit" 
+				}); 
 
-var loginSubmit = document.getElementById('entry-login'); 
-loginSubmit.click(); 
-
-});
+				chrome.extension.sendRequest({redirect: true});
+			}
+		});
+	});
 });

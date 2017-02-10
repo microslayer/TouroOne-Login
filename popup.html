@@ -1,30 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Touro Blackboard Login</title>
+    <title>TouroOne Login</title>
     <link rel="stylesheet" type="text/css" href="popup.css" >
     <script src="jquery.js"></script>
     <script src="popup.js"></script>
 </head>
 
 <body>
-    <welcome> Welcome to the Touro Blackboard login expediator.</welcome> <br>
+    <welcome> Welcome to the TouroOne Login Expediator</welcome> <br>
     <br>
-    Please do not install on public computers, including those in a college
+    Please do not install on public computers, such as those in a computer
     lab or public library.<br>
     <br>
 
-    <div id="changeInfo">
-        Enter or change your login information by clicking here.
-    </div> <br>
+    <div>
+        <input id="extEnabledCheckbox" type="checkbox" /> Automatic login enabled
+    </div>
 
-    <warning>
-        Note:</warning> To change your Blackboard login information, you must use this
-        extension. The website will automatically log you in.<br>
     <br>
 
-    <div id="footer">
-	Questions? Comments? Suggestions? Contact leffcode@gmail.com.<br>This extension is unaffiliated with Blackboard and Touro College.  
+    <div id="changeInfo">
+        Click here to enter or change your login information.
     </div>
+
+    <div>
+        <p>Automatically navigate to 
+            <select id="automaticNavigate">
+                <option value="blackboard">Blackboard</option>
+                <option value="registration">Registration</option>
+                <option value="academic">Academic</option>
+                <option value="financialServices">Financial Services</option>
+                <option value="touchnet">TouchNet</option>
+                <option value="studentEmail">Touro Email</option>
+                <option value="touchnet">None</option>
+                <option>Enter link...</option>
+            </select>
+        </p>
+    </div>
+
+<!--     <warning>
+        Note:</warning> To change your Blackboard login information, you must disable this extension. Otherwise, you will .<br>
+        <br>
+    -->
+    <div id="footer">
+       Questions? Comments? Suggestions? Contact leffcode@gmail.com.<br>This extension is unaffiliated with Blackboard and Touro College.  
+   </div>
 </body>
 </html>
